@@ -20,6 +20,10 @@ banner = '''
 '''
 puts banner
 
+if ARGV.length == 0
+	abort "\nUsage: ruby aspDebugCheck.rb <url>\n\nExample: ruby aspDebugCheck.rb http://site.com\n\n"
+end
+
 url = URI.parse(ARGV[0].chomp)
 
 puts "[+] Checking #{url} for ASP.NET debugging enabled"
