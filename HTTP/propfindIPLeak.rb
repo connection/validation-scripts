@@ -9,12 +9,18 @@ Content-Length: 0\r
 
 HTTP
 
-target = ARGV[0]
 puts """\n        #######################################
         # PROPFIND IP Address Leakage Checker #
         # Coded By : Luis \"connection\" Santana#
         # HackTalk Security                   #
         #######################################\n\n"""
+
+if ARGV.empty?
+	puts "Usage: ruby propfindIPLeak.rb <url>"
+	abort "Example: ruby propfindIPLeak.rb http://site.com"
+end
+
+target = ARGV[0]
 
 puts "[+] Connecting to #{target}"
 EventMachine::run do
